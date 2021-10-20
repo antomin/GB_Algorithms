@@ -11,12 +11,18 @@ import random
 
 # Случайное целое число
 x, y = int(input('Целые числа.\nОт: ')), int(input('До: '))
-print(random.randint(x, y)) if x < y else print(random.randint(y, x))
+if x > y:
+    x, y = y, x
+print(random.randint(x, y))
 
 # Случайное вещественное число
 x, y = float(input('Вещественные числа.\nОт: ')), float(input('До: '))
-print(random.uniform(x, y)) if x < y else print(random.uniform(y, x))
+if x > y:
+    x, y = y, x
+print(random.uniform(x, y))
 
 # Случайные символ
 x, y = ord(input('Символы.\nОт: ')), ord(input('До: '))
-print(chr(random.randint(x, y))) if x < y else print(chr(random.randint(y, x)))
+if x > y:
+    x, y = y, x
+print(chr(random.randint(x, y)))
